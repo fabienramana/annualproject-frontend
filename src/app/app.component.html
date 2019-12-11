@@ -1,8 +1,13 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-expand navbar-dark bg-dark nav navbar-nav navbar-right">
   <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/login">Login</a>
-      <a class="nav-item nav-link" routerLink="/create">Create</a>
+      <ul class="nav navbar-nav">
+        <li><a class="nav-item nav-link glyphicon glyphicon-log-in" routerLink="/login"></a></li>
+        <li><a class="nav-item nav-link glyphicon glyphicon-user" routerLink="/create"></a></li>
+    </ul>
   </div>
 </nav>
 

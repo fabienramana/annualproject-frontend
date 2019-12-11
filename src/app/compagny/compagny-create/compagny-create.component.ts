@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./compagny-create.component.scss'],
 })
 export class CompagnyCreateComponent {
-
+  createCompagny(email, pwd) {
+    alert(email.value + " " + pwd.value);
+  }
 }
