@@ -11,7 +11,7 @@ build:
     - npm run build
   artifacts:
     paths:
-      - dis/
+      - dist/frontend/
     expire_in: 1 hour
 
 deploy:
