@@ -9,12 +9,15 @@ import { AppComponent } from './app.component';
 import { CompagnyCreateComponent } from './compagny/compagny-create/compagny-create.component';
 import { CompagnyLoginComponent } from './compagny/compagny-login/compagny-login.component';
 import { NotFoundComponent } from './compagny/errors/not-found/not-found.component';
+import {CompagnyProfilComponent} from './compagny/compagny-profil/compagny-profil.component'
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompagnyCreateComponent,
     CompagnyLoginComponent,
+    CompagnyProfilComponent,
     NotFoundComponent,
   ],
   imports: [
