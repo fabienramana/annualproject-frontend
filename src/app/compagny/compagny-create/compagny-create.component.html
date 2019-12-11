@@ -13,17 +13,17 @@
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-      <label for="psw-repeat"><b>Address</b></label>
-      <input type="password" placeholder="exemple: 242 rue Faubourg" name="psw-repeat" required>
+      <label for="address"><b>Address</b></label>
+      <input type="text" placeholder="exemple: 242 rue Faubourg" name="address" #address required>
 
-      <label for="psw-repeat"><b>Ville</b></label>
-      <input type="password" placeholder="exemple: Paris" name="psw-repeat" required>
+      <label for="country"><b>Pays</b></label>
+      <input type="text" placeholder="exemple: Paris" name="country" #country required>
 
-      <label for="psw-repeat"><b>Siren</b></label>
-      <input type="password" placeholder="Numéro Siren" name="psw-repeat" required>
+      <label for="siren"><b>Siren</b></label>
+      <input type="text" placeholder="Numéro Siren" name="siren" #siren required>
 
-      <label for="psw-repeat"><b>Activité</b></label>
-      <input type="password" placeholder="Activité" name="psw-repeat" required>
+      <label for="activity"><b>Activité</b></label>
+      <input type="text" placeholder="Activité" name="activity" #activity required>
 
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -31,7 +31,7 @@
 
       <div class="clearfix">
         <button type="button" class="cancelbtn">Cancel</button>
-        <button (click)= "createCompagny(email, pwd)" type="submit" class="signupbtn">Sign Up</button>
+        <button (click)= "createCompagny(email, pwd, address, country, siren, activity)" type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>
