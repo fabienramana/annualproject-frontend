@@ -17,9 +17,6 @@ build:
 deploy:
   image: python:latest
   stage: deploy
-  environment:
-    name: prod
-    url: https://annualproject-api.io/
   only:
    - master
   script:
