@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CompagnyCreateComponent } from './compagny/compagny-create/compagny-create.component';
 import { CompagnyLoginComponent } from './compagny/compagny-login/compagny-login.component';
 import { NotFoundComponent } from './compagny/errors/not-found/not-found.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NotFoundComponent } from './compagny/errors/not-found/not-found.compone
     CompagnyCreateComponent,
     CompagnyLoginComponent,
     NotFoundComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
