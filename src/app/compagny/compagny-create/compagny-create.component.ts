@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./compagny-create.component.scss'],
 })
 export class CompagnyCreateComponent {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   createCompagny(email, pwd, address, country, siren, activity) {
     alert(email.value + ' ' + pwd.value + ' ' + address.value + ' ' + country.value + ' ' + siren.value + ' ' + activity.value);
@@ -31,7 +32,15 @@ export class CompagnyCreateComponent {
       activityValue
     };
     console.log(compagny);
-    this.http.post('http://localhost:3000/api/create_compagny', compagny)
-        .subscribe(res => console.log(res));
+    this.http.post<any>('http://localhost:3000/api/create_company', compagny)
+        .subscribe(res => {
+          // Mettre sécurité si erreur
+            console.log(res);
+            console.log(res.token);
+            localStorage.setItem ('token', res.token);
+            console.log(localStorage.getItem('token'));
+            //this.router.navigateByUrl['homepage'];
+          }
+        );
   }
 }
