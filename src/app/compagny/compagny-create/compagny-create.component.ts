@@ -39,7 +39,7 @@ export class CompagnyCreateComponent {
             console.log(res.token);
             localStorage.setItem ('token', res.token);
             console.log(localStorage.getItem('token'));
-            //this.router.navigateByUrl['homepage'];
+            this.router.navigateByUrl('/homepage');
           }
         );
   }
