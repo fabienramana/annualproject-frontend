@@ -1,0 +1,19 @@
+<label><b>Type Of Component</b></label>
+<br>
+<input type="text" placeholder="Enter Type of component" [(ngModel)]="typeOfComponent">
+<br>
+<br>
+
+<angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="data"></angular-editor>
+
+<label><b>Number of Photos</b></label>
+<br>
+<input type="number" placeholder="Enter Number of photos" [(ngModel)]="numberOfPhotos">
+<br>
+<br>
+<label><b>Number of TextField</b></label>
+<br>
+<input type="number" placeholder="Enter Number of text Field" [(ngModel)]="numberOfTextField">
+<br>
+<br>
+<button (click)="sendData()">Save</button>

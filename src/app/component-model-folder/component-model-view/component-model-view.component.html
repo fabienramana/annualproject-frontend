@@ -1,0 +1,13 @@
+<p>component-model-view works!</p>
+<h2>Mes Modeles de composants</h2>
+<button routerLink="/create-component-model">Créer un nouveau modèle de composant</button>
+<br>
+<br>
+<ul class="list-group">
+  <app-component-model  *ngFor="let componentModel of componentModels"
+                  [data]="componentModel.data"
+                  [numberOfPhotos]="componentModel.numberOfPhotos"
+                  [numberOfTextField]="componentModel.numberOfTextFields"
+                  [typeOfComponent]="componentModel.typeOfComponent"
+                  [id]="componentModel._id"></app-component-model>
+</ul>
