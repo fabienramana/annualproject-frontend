@@ -1,0 +1,25 @@
+<tr>
+  <td> Id </td>
+  <td>{{ id }}</td>
+</tr>
+<tr>
+  <td> Type de composant : </td>
+  <td>{{ typeOfComponent }}</td>
+</tr>
+<tr>
+  <td> Data : </td>
+  <td>{{ data }}</td>
+</tr>
+<tr>
+  <td> Nombre de photos : </td>
+  <td>{{ numberOfPhotos }}</td>
+</tr>
+<tr>
+  <td> Nombre de champs texte : </td>
+  <td>{{ numberOfTextField }}</td>
+</tr>
+<button [routerLink]="['modify', id]">Modifier</button>
+<button [routerLink]="['delete', id]">Supprimer</button>
+<br>
+<br>
+

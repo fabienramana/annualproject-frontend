@@ -4,12 +4,20 @@ import { CompagnyLoginComponent } from './compagny/compagny-login/compagny-login
 import { CompagnyCreateComponent } from './compagny/compagny-create/compagny-create.component';
 import { NotFoundComponent } from './compagny/errors/not-found/not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CreateComponentModelComponent } from './component-model-folder/create-component-model/create-component-model.component';
+import { ComponentModelViewComponent } from './component-model-folder/component-model-view/component-model-view.component';
+import { ModifyComponentModelComponent } from './component-model-folder/modify-component-model/modify-component-model.component';
+import { DeleteComponentModelComponent } from './component-model-folder/delete-component-model/delete-component-model.component';
 
 
 const routes: Routes = [
   { path: '', component: CompagnyLoginComponent},
   { path: 'login', component: CompagnyLoginComponent},
-  { path: 'create', component: CompagnyCreateComponent},
+  { path: 'create-company', component: CompagnyCreateComponent},
+  { path: 'create-component-model', component: CreateComponentModelComponent },
+  { path: 'component-models', component: ComponentModelViewComponent },
+  { path: 'component-models/modify/:id', component: ModifyComponentModelComponent },
+  { path: 'component-models/delete/:id', component: DeleteComponentModelComponent },
   { path: 'homepage', component: HomepageComponent},
   { path: 'not-found', component: NotFoundComponent},
   { path: '**', redirectTo: 'not-found' },
