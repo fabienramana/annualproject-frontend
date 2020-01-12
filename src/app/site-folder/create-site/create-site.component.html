@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div>
+
+  </div>
+  <div>
+    <label for="name">Nom du site</label>
+    <input type="text" id="name" name="name" ngModel>
+  </div>
+  <div>
+    <label for="activity">Domaine d'activité</label>
+    <input type="text" id="activity" name="activity" ngModel>
+  </div>
+  <div>
+    <label for="description">Description du site</label>
+    <textarea id="description" name="description" ngModel></textarea>
+  </div>
+  <div>
+    <label for="unitTime">Unité de temps</label>
+    <select id="unitTime" name="unitTime" ngModel>
+      <option value="heures">Heures</option>
+      <option value="jours">Jours</option>
+      <option value="mois">Mois</option>
+    </select>
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>

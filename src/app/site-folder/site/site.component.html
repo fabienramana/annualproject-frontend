@@ -1,0 +1,32 @@
+<tr>
+  <td> Nom du site </td>
+  <td>{{ name }}</td>
+</tr>
+<tr>
+  <td> Domaine d'activité :  </td>
+  <td>{{ activity }}</td>
+</tr>
+<tr>
+  <td> Description du site :  </td>
+  <td>{{ description }}</td>
+</tr>
+<tr>
+  <td> Statut :  </td>
+  <td *ngIf="isEnable==true"> Activé</td>
+  <td *ngIf="!isEnable"> Désactivé</td>
+</tr>
+<tr>
+  <td> Unité de temps :  </td>
+  <td>{{ unitTime }}</td>
+</tr>
+<tr>
+  <button *ngIf="!isEnable && !isAdmin" (click)="activateSite()">Activer</button>
+  <button *ngIf="isEnable" (click)="deactivateSite()">Désactiver</button>
+  <button *ngIf="!isAdmin" [routerLink]="['modify', id]">Modifier</button>
+</tr>
+<!-- AJOUTER MODIFIER POUR ENTREPRISE, DESACTIVER POUR ENTREPRISE ET ADMIN-->
+<br>
+<button>Détails</button>
+<br>
+<br>
+

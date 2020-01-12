@@ -8,12 +8,18 @@ import { CreateComponentModelComponent } from './component-model-folder/create-c
 import { ComponentModelViewComponent } from './component-model-folder/component-model-view/component-model-view.component';
 import { ModifyComponentModelComponent } from './component-model-folder/modify-component-model/modify-component-model.component';
 import { DeleteComponentModelComponent } from './component-model-folder/delete-component-model/delete-component-model.component';
+import { CreateSiteComponent } from './site-folder/create-site/create-site.component';
+import { SiteViewComponent } from './site-folder/site-view/site-view.component';
+import { ModifySiteComponent } from './site-folder/modify-site/modify-site.component';
 
 
 const routes: Routes = [
   { path: '', component: CompagnyLoginComponent},
   { path: 'login', component: CompagnyLoginComponent},
   { path: 'create-company', component: CompagnyCreateComponent},
+  { path: 'create-site', component: CreateSiteComponent },
+  { path: 'sites', component: SiteViewComponent },
+  { path: 'sites/modify/:id', component: ModifySiteComponent },
   { path: 'create-component-model', component: CreateComponentModelComponent },
   { path: 'component-models', component: ComponentModelViewComponent },
   { path: 'component-models/modify/:id', component: ModifyComponentModelComponent },
