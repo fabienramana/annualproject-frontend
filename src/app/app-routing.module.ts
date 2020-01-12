@@ -11,6 +11,11 @@ import { DeleteComponentModelComponent } from './component-model-folder/delete-c
 import { CreateSiteComponent } from './site-folder/create-site/create-site.component';
 import { SiteViewComponent } from './site-folder/site-view/site-view.component';
 import { ModifySiteComponent } from './site-folder/modify-site/modify-site.component';
+import { CreateArticleComponent } from './article-folder/create-article/create-article.component';
+import { ModifyArticleComponent } from './article-folder/modify-article/modify-article.component';
+import { DeleteArticleComponent } from './article-folder/delete-article/delete-article.component';
+import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +25,10 @@ const routes: Routes = [
   { path: 'create-site', component: CreateSiteComponent },
   { path: 'sites', component: SiteViewComponent },
   { path: 'sites/modify/:id', component: ModifySiteComponent },
+  { path: 'sites/:siteId/articles', component: ArticleViewComponent },
+  { path: 'sites/:siteId/articles/create', component: CreateArticleComponent },
+  { path: 'sites/:siteId/articles/modify/:articleId', component: ModifyArticleComponent },
+  { path: 'sites/:siteId/articles/delete/:articleId', component: DeleteArticleComponent },
   { path: 'create-component-model', component: CreateComponentModelComponent },
   { path: 'component-models', component: ComponentModelViewComponent },
   { path: 'component-models/modify/:id', component: ModifyComponentModelComponent },

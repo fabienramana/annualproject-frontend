@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div>
+    <label for="name">Nom de l'article</label>
+    <input type="text" id="name" name="name" [(ngModel)]="article.name">
+  </div>
+  <div>
+    <label for="description">Description de l'article</label>
+    <input type="text" id="description" name="description" [(ngModel)]="article.description">
+  </div>
+  <div>
+    <label for="price">Prix de l'article par unité de temps</label>
+    <input type="number" id="price" name="price" min="0" step=".01" [(ngModel)]="article.price">
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>

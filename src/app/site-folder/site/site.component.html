@@ -24,9 +24,8 @@
   <button *ngIf="isEnable" (click)="deactivateSite()">Désactiver</button>
   <button *ngIf="!isAdmin" [routerLink]="['modify', id]">Modifier</button>
 </tr>
-<!-- AJOUTER MODIFIER POUR ENTREPRISE, DESACTIVER POUR ENTREPRISE ET ADMIN-->
 <br>
-<button>Détails</button>
+<button *ngIf="!isAdmin" [routerLink]="[id, 'articles']">Voir les articles du site</button>
 <br>
 <br>
 

@@ -1,0 +1,12 @@
+<p>article-view works!</p>
+<br>
+<button [routerLink]="['create']">Créer un nouvel article</button>
+<br>
+<br>
+<ul class="list-group">
+  <app-article  *ngFor="let article of articles"
+                        [name]="article.name"
+                        [description]="article.description"
+                        [price]="article.price"
+                        [id]="article._id"></app-article>
+</ul>

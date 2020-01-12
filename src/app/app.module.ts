@@ -21,6 +21,11 @@ import { CreateSiteComponent } from './site-folder/create-site/create-site.compo
 import { SiteComponent } from './site-folder/site/site.component';
 import { SiteViewComponent } from './site-folder/site-view/site-view.component';
 import { ModifySiteComponent } from './site-folder/modify-site/modify-site.component';
+import { CreateArticleComponent } from './article-folder/create-article/create-article.component';
+import { ModifyArticleComponent } from './article-folder/modify-article/modify-article.component';
+import { DeleteArticleComponent } from './article-folder/delete-article/delete-article.component';
+import { ArticleComponent } from './article-folder/article/article.component';
+import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,11 @@ import { ModifySiteComponent } from './site-folder/modify-site/modify-site.compo
     SiteComponent,
     SiteViewComponent,
     ModifySiteComponent,
+    CreateArticleComponent,
+    ModifyArticleComponent,
+    DeleteArticleComponent,
+    ArticleComponent,
+    ArticleViewComponent,
   ],
   imports: [
     BrowserModule,
