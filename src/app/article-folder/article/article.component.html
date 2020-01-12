@@ -1,0 +1,22 @@
+<tr>
+  <td> Nom de l'article</td>
+  <td>{{ name }}</td>
+</tr>
+<tr>
+  <td> Description de l'articles</td>
+  <td>{{ description }}</td>
+</tr>
+<tr>
+  <td> Description du site :  </td>
+  <td>{{ description }}</td>
+</tr>
+<tr>
+  <td> Prix de l'article par unité de temps : </td>
+  <td> {{ price }} €</td>
+</tr>
+<tr>
+  <button [routerLink]="['modify', id]">Modifier</button>
+  <button [routerLink]="['delete', id]">Supprimer</button>
+</tr>
+<br>
+<br>

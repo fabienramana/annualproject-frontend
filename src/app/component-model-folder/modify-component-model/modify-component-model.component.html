@@ -9,12 +9,12 @@
 
 <label><b>Number of Photos</b></label>
 <br>
-<input type="number" placeholder="Enter Number of photos" [(ngModel)]="numberOfPhotos">
+<input type="number" placeholder="Enter Number of photos" min="0" [(ngModel)]="numberOfPhotos">
 <br>
 <br>
 <label><b>Number of TextField</b></label>
 <br>
-<input type="number" placeholder="Enter Number of text Field" [(ngModel)]="numberOfTextField">
+<input type="number" placeholder="Enter Number of text Field" min="0" [(ngModel)]="numberOfTextField">
 <br>
 <br>
 <button (click)="sendData()">Save</button>
