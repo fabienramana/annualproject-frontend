@@ -17,6 +17,10 @@ import { ComponentModelComponent } from './component-model-folder/component-mode
 import { ComponentModelViewComponent } from './component-model-folder/component-model-view/component-model-view.component';
 import { ModifyComponentModelComponent } from './component-model-folder/modify-component-model/modify-component-model.component';
 import { DeleteComponentModelComponent } from './component-model-folder/delete-component-model/delete-component-model.component';
+import { CreateSiteComponent } from './site-folder/create-site/create-site.component';
+import { SiteComponent } from './site-folder/site/site.component';
+import { SiteViewComponent } from './site-folder/site-view/site-view.component';
+import { ModifySiteComponent } from './site-folder/modify-site/modify-site.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { DeleteComponentModelComponent } from './component-model-folder/delete-c
     ComponentModelViewComponent,
     ModifyComponentModelComponent,
     DeleteComponentModelComponent,
+    CreateSiteComponent,
+    SiteComponent,
+    SiteViewComponent,
+    ModifySiteComponent,
   ],
   imports: [
     BrowserModule,
