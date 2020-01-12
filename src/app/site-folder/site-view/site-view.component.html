@@ -1,0 +1,15 @@
+<p>site-view works!</p>
+<h2>Sites</h2>
+<br>
+<button *ngIf="isAdmin==false" routerLink="/create-site">Créer un nouveau site</button>
+<br>
+<br>
+<ul class="list-group">
+  <app-site  *ngFor="let site of sites"
+                        [name]="site.name"
+                        [activity]="site.activity"
+                        [description]="site.description"
+                        [isEnable]="site.isEnable"
+                        [unitTime]="site.unitTime"
+                        [id]="site._id"></app-site>
+</ul>

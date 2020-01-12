@@ -1,1 +1,4 @@
 <p>homepage works! Hello to {{ mail }} et est-il admin ? {{ isAdmin }}</p>
+
+<button *ngIf="isAdmin==true" routerLink="/sites">Voir tous les sites</button>
+<button *ngIf="isAdmin==false" routerLink="/sites">Voir mes sites</button>
