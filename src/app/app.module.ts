@@ -26,6 +26,7 @@ import { ModifyArticleComponent } from './article-folder/modify-article/modify-a
 import { DeleteArticleComponent } from './article-folder/delete-article/delete-article.component';
 import { ArticleComponent } from './article-folder/article/article.component';
 import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
+import { DisconnectComponent } from './disconnect/disconnect.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ArticleViewComponent } from './article-folder/article-view/article-view
     DeleteArticleComponent,
     ArticleComponent,
     ArticleViewComponent,
+    DisconnectComponent,
   ],
   imports: [
     BrowserModule,
