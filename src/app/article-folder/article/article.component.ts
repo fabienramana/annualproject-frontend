@@ -12,6 +12,7 @@ export class ArticleComponent implements OnInit {
   @Input() name: string;
   @Input() description: string;
   @Input() price: string;
+  @Input() imageUrl: string;
 
   constructor() { }
 

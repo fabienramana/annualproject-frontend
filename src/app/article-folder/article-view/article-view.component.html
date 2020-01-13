@@ -1,6 +1,7 @@
 <p>article-view works!</p>
 <br>
 <button [routerLink]="['create']">Créer un nouvel article</button>
+<button routerLink="/sites">Retourner aux sites</button>
 <br>
 <br>
 <ul class="list-group">
@@ -8,5 +9,6 @@
                         [name]="article.name"
                         [description]="article.description"
                         [price]="article.price"
+                        [imageUrl]="article.imagePath"
                         [id]="article._id"></app-article>
 </ul>

@@ -11,5 +11,9 @@
     <label for="price">Prix de l'article par unité de temps</label>
     <input type="number" id="price" name="price" min="0" step=".01" ngModel>
   </div>
+  <div>
+    <label>Image du produit</label>
+    <input type="file" name="image" (change)="selectImage($event)">
+  </div>
   <button type="submit">Enregistrer</button>
 </form>

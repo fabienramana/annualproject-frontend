@@ -24,11 +24,6 @@
 
       <label for="activity"><b>Activité</b></label>
       <input type="text" placeholder="Activité" name="activity" #activity required>
-
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-
       <div class="clearfix">
         <button type="button" class="cancelbtn">Cancel</button>
         <button (click)= "createCompagny(email, pwd, address, country, siren, activity)" type="submit" class="signupbtn">Sign Up</button>
