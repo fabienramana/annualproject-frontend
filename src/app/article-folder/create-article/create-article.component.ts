@@ -13,11 +13,20 @@ export class CreateArticleComponent implements OnInit {
   @Input() description: string;
   @Input() price: string;
   siteId: string;
+  image: any;
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
+
+  selectImage(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.image = file;
+    }
+  }
+
 
   onSubmit(form: NgForm) {
     console.log(form.value);
@@ -26,18 +35,25 @@ export class CreateArticleComponent implements OnInit {
     const price = form.value['price'];
     const description = form.value['description'];
 
-    const article = {
-      name,
-      description,
-      price,
-      siteId
-    };
-
-    this.http.post<any>('http://localhost:3000/api/create-article', article)
-      .subscribe(res => {
-        console.log(res);
+    const formData = new FormData();
+    formData.append('file', this.image);
+    this.http.post<any>('http://localhost:3000/file', formData)
+    .subscribe(res => {
+      console.log(res);
+      const imagePath = res.imageUrl;
+      const article = {
+        name,
+        description,
+        price,
+        siteId,
+        imagePath,
+      };
+      this.http.post<any>('http://localhost:3000/api/create-article', article)
+      .subscribe(res2 => {
+        console.log(res2);
         this.router.navigateByUrl('/sites/' + siteId + '/articles');
       });
+    });
   }
 
 }
