@@ -17,7 +17,7 @@ export class ModifyArticleComponent implements OnInit {
   ngOnInit() {
     const articleIdKey = 'articleId';
     const articleId = this.route.snapshot.params[articleIdKey];
-    this.http.get<any>('http://localhost:3000/api/article/' + articleId)
+    this.http.get<any>('https://annualproject-back.herokuapp.com/api/article/' + articleId)
       .subscribe(res => {
         this.article = res;
       });
@@ -29,7 +29,7 @@ export class ModifyArticleComponent implements OnInit {
     const articleIdKey = 'articleId';
     const articleId = this.route.snapshot.params[articleIdKey];
     console.log(form.value);
-    this.http.put<any>('http://localhost:3000/api/article/' + articleId, form.value)
+    this.http.put<any>('https://annualproject-back.herokuapp.com/api/article/' + articleId, form.value)
       .subscribe(res => {
         console.log(res);
         this.router.navigateByUrl('/sites/' + siteId + '/articles');

@@ -15,7 +15,7 @@ export class DeleteComponentModelComponent implements OnInit {
   ngOnInit() {
     const idKey = 'id';
     const id = this.route.snapshot.params[idKey];
-    this.http.delete<any>('http://localhost:3000/api/component-model/' + id)
+    this.http.delete<any>('https://annualproject-back.herokuapp.com/api/component-model/' + id)
     .subscribe(res => {
       console.log(res);
       this.router.navigateByUrl('/component-models');

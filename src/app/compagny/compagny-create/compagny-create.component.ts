@@ -32,7 +32,7 @@ export class CompagnyCreateComponent {
       activityValue
     };
     console.log(compagny);
-    this.http.post<any>('http://localhost:3000/api/create_company', compagny)
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/create_company', compagny)
         .subscribe(res => {
           // Mettre sécurité si erreur
             console.log(res);

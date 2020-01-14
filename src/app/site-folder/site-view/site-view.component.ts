@@ -19,7 +19,7 @@ export class SiteViewComponent implements OnInit {
   ngOnInit() {
     this.isAdmin = this.getIfIsAdmin();
     if (this.isAdmin) {
-        this.http.get<any>('http://localhost:3000/api/sites')
+        this.http.get<any>('https://annualproject-back.herokuapp.com/api/sites')
       .subscribe(res => {
         this.sites = res;
         console.log(this.sites);
@@ -28,7 +28,7 @@ export class SiteViewComponent implements OnInit {
       const decoded = this.decodeToken();
       const companyId = decoded.user._id;
       console.log(companyId);
-      this.http.get<any>('http://localhost:3000/api/company/' + companyId + '/sites')
+      this.http.get<any>('https://annualproject-back.herokuapp.com/api/company/' + companyId + '/sites')
         .subscribe(res => {
           console.log(res);
           this.sites = res;

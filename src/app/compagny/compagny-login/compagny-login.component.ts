@@ -19,13 +19,13 @@ export class CompagnyLoginComponent {
       password
     };
     console.log(user);
-    this.http.post<any>('http://localhost:3000/api/login_company', user)
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/login_company', user)
         .subscribe(res => {
           // Mettre sécurité si erreur
             console.log(res);
             console.log(res.error);
             if (res.error === 'Error authenticating') {
-              this.http.post<any>('http://localhost:3000/api/login_admin', user)
+              this.http.post<any>('https://annualproject-back.herokuapp.com/api/login_admin', user)
                 .subscribe(res2 => {
                   console.log(res2);
                   if (res2.error === 'Error authenticating') {

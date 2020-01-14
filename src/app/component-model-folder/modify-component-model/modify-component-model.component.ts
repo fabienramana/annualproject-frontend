@@ -21,7 +21,7 @@ export class ModifyComponentModelComponent implements OnInit {
     const idKey = 'id';
     const id = this.route.snapshot.params[idKey];
     this.id = id;
-    this.http.get<any>('http://localhost:3000/api/component-model/' + id)
+    this.http.get<any>('https://annualproject-back.herokuapp.com/api/component-model/' + id)
     .subscribe(res => {
       this.numberOfPhotos = res.numberOfPhotos;
       this.data = res.data;
@@ -44,7 +44,7 @@ export class ModifyComponentModelComponent implements OnInit {
       numberOfTextFields,
       typeOfComponent
     };
-    this.http.put<any>('http://localhost:3000/api/component-model/' + this.id, componentModelToUpdate)
+    this.http.put<any>('https://annualproject-back.herokuapp.com/api/component-model/' + this.id, componentModelToUpdate)
       .subscribe(res => {
         console.log(res);
         this.router.navigateByUrl('/component-models');

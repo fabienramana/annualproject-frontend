@@ -16,7 +16,7 @@ export class DeleteArticleComponent implements OnInit {
     const siteId = this.route.snapshot.params[siteIdKey];
     const articleIdKey = 'articleId';
     const articleId = this.route.snapshot.params[articleIdKey];
-    this.http.delete<any>('http://localhost:3000/api/article/' + articleId)
+    this.http.delete<any>('https://annualproject-back.herokuapp.com/api/article/' + articleId)
       .subscribe(res => {
         console.log(res);
         this.router.navigateByUrl('sites/' + siteId + '/articles');
