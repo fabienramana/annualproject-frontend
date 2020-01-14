@@ -37,7 +37,7 @@ export class CreateArticleComponent implements OnInit {
 
     const formData = new FormData();
     formData.append('file', this.image);
-    this.http.post<any>('http://localhost:3000/file', formData)
+    this.http.post<any>('https://annualproject-back.herokuapp.com/file', formData)
     .subscribe(res => {
       console.log(res);
       const imagePath = res.imageUrl;
@@ -48,7 +48,7 @@ export class CreateArticleComponent implements OnInit {
         siteId,
         imagePath,
       };
-      this.http.post<any>('http://localhost:3000/api/create-article', article)
+      this.http.post<any>('https://annualproject-back.herokuapp.com/api/create-article', article)
       .subscribe(res2 => {
         console.log(res2);
         this.router.navigateByUrl('/sites/' + siteId + '/articles');

@@ -30,7 +30,7 @@ export class CreateComponentModelComponent implements OnInit {
       numberOfTextFields,
       typeOfComponent,
     };
-    this.http.post<any>('http://localhost:3000/api/create_component_model', componentModel)
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/create_component_model', componentModel)
     .subscribe(res => {
       console.log(res);
       this.router.navigateByUrl('/component-models');

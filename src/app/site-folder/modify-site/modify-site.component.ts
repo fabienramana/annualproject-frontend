@@ -18,7 +18,7 @@ export class ModifySiteComponent implements OnInit {
     const idKey = 'id';
     const id = this.route.snapshot.params[idKey];
     console.log(id);
-    this.http.get<any>('http://localhost:3000/api/site/' + id)
+    this.http.get<any>('https://annualproject-back.herokuapp.com/api/site/' + id)
       .subscribe(res => {
         this.site = res;
         console.log(this.site);
@@ -30,7 +30,7 @@ export class ModifySiteComponent implements OnInit {
     const id = this.route.snapshot.params[idKey];
     console.log(id);
     console.log(form.value);
-    this.http.put<any>('http://localhost:3000/api/site/' + id, form.value)
+    this.http.put<any>('https://annualproject-back.herokuapp.com/api/site/' + id, form.value)
       .subscribe(res => {
         console.log(res);
         this.router.navigateByUrl('/sites');

@@ -15,7 +15,7 @@ export class ArticleViewComponent implements OnInit {
 
   ngOnInit() {
     const siteId = this.route.snapshot.params['siteId'];
-    this.http.get<any>('http://localhost:3000/api/site/' + siteId + '/articles')
+    this.http.get<any>('https://annualproject-back.herokuapp.com/api/site/' + siteId + '/articles')
       .subscribe(res => {
         this.articles = res;
         console.log(this.articles);

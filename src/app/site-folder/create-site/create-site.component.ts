@@ -39,7 +39,7 @@ export class CreateSiteComponent implements OnInit {
       companyId
     };
 
-    this.http.post<any>('http://localhost:3000/api/create-site', site)
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/create-site', site)
       .subscribe(res => {
         console.log(res);
         this.router.navigateByUrl('/sites');

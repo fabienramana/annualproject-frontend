@@ -32,7 +32,7 @@ export class SiteComponent implements OnInit {
   }
 
   activateSite() {
-    this.http.post<any>('http://localhost:3000/api/activate-site/' + this.id, {})
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/activate-site/' + this.id, {})
     .subscribe(res => {
       console.log(res);
       window.location.reload();
@@ -40,7 +40,7 @@ export class SiteComponent implements OnInit {
   }
 
   deactivateSite() {
-    this.http.post<any>('http://localhost:3000/api/deactivate-site/' + this.id, {})
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/deactivate-site/' + this.id, {})
     .subscribe(res => {
       console.log(res);
       window.location.reload();
