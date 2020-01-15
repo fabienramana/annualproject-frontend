@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
 
+  id: string;
   mail: string;
   isAdmin = false;
 
@@ -18,5 +19,6 @@ export class HomepageComponent implements OnInit {
     const decoded = this.authService.decodeToken();
     this.mail = decoded.user.email;
     this.isAdmin = decoded.user.isAdmin;
+    this.id = decoded.user._id;
   }
 }
