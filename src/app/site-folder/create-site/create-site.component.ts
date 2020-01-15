@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import * as jwt_decode from 'jwt-decode';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import * as jwt_decode from 'jwt-decode';
 export class CreateSiteComponent implements OnInit {
 
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -26,7 +27,7 @@ export class CreateSiteComponent implements OnInit {
     const unitTime = form.value['unitTime'];
     const createdAt = new Date();
     const isEnable = false;
-    const decoded = this.decodeToken();
+    const decoded = this.authService.decodeToken();
     const companyId = decoded.user._id;
 
     const site = {
@@ -46,10 +47,5 @@ export class CreateSiteComponent implements OnInit {
       });
   }
 
-  decodeToken() {
-    const token = localStorage.getItem('token');
-    const decoded = jwt_decode(token);
-    return decoded;
-  }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import * as jwt_decode from 'jwt-decode';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -14,10 +15,10 @@ export class SiteViewComponent implements OnInit {
   sites: any[];
   isAdmin: boolean;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
-    this.isAdmin = this.getIfIsAdmin();
+    this.isAdmin = this.authService.getIfIsAdmin();
     if (this.isAdmin) {
         this.http.get<any>('https://annualproject-back.herokuapp.com/api/sites')
       .subscribe(res => {
@@ -25,7 +26,7 @@ export class SiteViewComponent implements OnInit {
         console.log(this.sites);
       });
     } else {
-      const decoded = this.decodeToken();
+      const decoded = this.authService.decodeToken();
       const companyId = decoded.user._id;
       console.log(companyId);
       this.http.get<any>('https://annualproject-back.herokuapp.com/api/company/' + companyId + '/sites')
@@ -35,19 +36,4 @@ export class SiteViewComponent implements OnInit {
         });
     }
   }
-
-  getIfIsAdmin() {
-    console.log(localStorage.getItem('isAdmin'));
-    if (localStorage.getItem('isAdmin') === 'true') {
-      return true;
-    }
-    return false;
-  }
-
-  decodeToken() {
-    const token = localStorage.getItem('token');
-    const decoded = jwt_decode(token);
-    return decoded;
-  }
-
 }

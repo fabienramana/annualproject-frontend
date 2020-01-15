@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-site',
@@ -17,19 +18,12 @@ export class SiteComponent implements OnInit {
   @Input() id: string;
   isAdmin: boolean;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
-    this.isAdmin = this.getIfIsAdmin();
+    this.isAdmin = this.authService.getIfIsAdmin();
   }
 
-  getIfIsAdmin() {
-    console.log(localStorage.getItem('isAdmin'));
-    if (localStorage.getItem('isAdmin') === 'true') {
-      return true;
-    }
-    return false;
-  }
 
   activateSite() {
     this.http.post<any>('https://annualproject-back.herokuapp.com/api/activate-site/' + this.id, {})

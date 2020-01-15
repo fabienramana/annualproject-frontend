@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
+import { AuthService } from './services/auth.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompagnyCreateComponent } from './compagny/compagny-create/compagny-create.component';
@@ -59,7 +61,7 @@ import { DisconnectComponent } from './disconnect/disconnect.component';
     FormsModule,
     AngularEditorModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
