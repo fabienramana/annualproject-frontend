@@ -16,6 +16,7 @@ import { ModifyArticleComponent } from './article-folder/modify-article/modify-a
 import { DeleteArticleComponent } from './article-folder/delete-article/delete-article.component';
 import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
 import { CreateAdminComponent } from './admin/create-admin/create-admin.component';
+import { UpdateCompanyComponent } from './compagny/update-company/update-company.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: CompagnyLoginComponent},
   { path: 'create-company', component: CompagnyCreateComponent},
   { path: 'create-site', component: CreateSiteComponent },
+  { path: 'homepage/company/:id', component: UpdateCompanyComponent },
   { path: 'create-admin', component: CreateAdminComponent },
   { path: 'sites', component: SiteViewComponent },
   { path: 'sites/modify/:id', component: ModifySiteComponent },

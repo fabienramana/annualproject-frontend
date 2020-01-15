@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div>
+
+  </div>
+  <div>
+    <label for="mail">Email</label>
+    <input type="text" id="mail" name="mail" [(ngModel)]="company.email">
+  </div>
+  <div>
+    <label for="sirenValue">SIREN</label>
+    <input type="text" id="sirenValue" name="sirenValue" [(ngModel)]="company.siren">
+  </div>
+  <div>
+    <label for="countryValue">Pays</label>
+    <input type="text" id="countryValue" name="countryValue" [(ngModel)]="company.country"/>
+  </div>
+  <div>
+    <label for="activityValue">Activité</label>
+    <input type="text" id="activityValue" name="activityValue" [(ngModel)]="company.activity"/>
+  </div>
+  <div>
+    <label for="addressValue">Adresse</label>
+    <input type="text" id="addressValue" name="addressValue" [(ngModel)]="company.address"/>
+  </div>
+
+  <button type="submit">Enregistrer</button>
+</form>

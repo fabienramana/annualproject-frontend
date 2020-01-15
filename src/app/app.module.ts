@@ -29,6 +29,7 @@ import { DeleteArticleComponent } from './article-folder/delete-article/delete-a
 import { ArticleComponent } from './article-folder/article/article.component';
 import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
 import { CreateAdminComponent } from './admin/create-admin/create-admin.component';
+import { UpdateCompanyComponent } from './compagny/update-company/update-company.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { CreateAdminComponent } from './admin/create-admin/create-admin.componen
     ArticleComponent,
     ArticleViewComponent,
     CreateAdminComponent,
+    UpdateCompanyComponent,
   ],
   imports: [
     BrowserModule,
