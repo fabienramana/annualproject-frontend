@@ -1,3 +1,5 @@
+<div style="border: 3px solid #A0A0A0;background: #C0C0C0;">
+
 <tr>
   <td> Nom du site </td>
   <td>{{ name }}</td>
@@ -24,8 +26,7 @@
   <button *ngIf="isEnable" (click)="deactivateSite()">Désactiver</button>
   <button *ngIf="!isAdmin" [routerLink]="['modify', id]">Modifier</button>
 </tr>
-<br>
 <button *ngIf="!isAdmin" [routerLink]="[id, 'articles']">Voir les articles du site</button>
 <br>
 <br>
-
+</div>
