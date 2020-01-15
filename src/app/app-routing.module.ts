@@ -15,6 +15,8 @@ import { CreateArticleComponent } from './article-folder/create-article/create-a
 import { ModifyArticleComponent } from './article-folder/modify-article/modify-article.component';
 import { DeleteArticleComponent } from './article-folder/delete-article/delete-article.component';
 import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
+import { CreateAdminComponent } from './admin/create-admin/create-admin.component';
+
 
 
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'login', component: CompagnyLoginComponent},
   { path: 'create-company', component: CompagnyCreateComponent},
   { path: 'create-site', component: CreateSiteComponent },
+  { path: 'create-admin', component: CreateAdminComponent },
   { path: 'sites', component: SiteViewComponent },
   { path: 'sites/modify/:id', component: ModifySiteComponent },
   { path: 'sites/:siteId/articles', component: ArticleViewComponent },
