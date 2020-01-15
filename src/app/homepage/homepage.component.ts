@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as jwt_decode from 'jwt-decode';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-homepage',
@@ -11,26 +12,11 @@ export class HomepageComponent implements OnInit {
   mail: string;
   isAdmin = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    const decoded = this.decodeToken();
+    const decoded = this.authService.decodeToken();
     this.mail = decoded.user.email;
-    this.isAdmin = this.getIfIsAdmin();
+    this.isAdmin = this.authService.getIfIsAdmin();
   }
-
-  decodeToken() {
-    const token = localStorage.getItem('token');
-    const decoded = jwt_decode(token);
-    return decoded;
-  }
-
-  getIfIsAdmin() {
-    console.log(localStorage.getItem('isAdmin'));
-    if (localStorage.getItem('isAdmin') === 'true') {
-      return true;
-    }
-    return false;
-  }
-
 }
