@@ -6,4 +6,5 @@
 
 <button *ngIf="isAdmin==true" routerLink="/sites">Voir tous les sites</button>
 <button *ngIf="isAdmin==false" routerLink="/sites">Voir mes sites</button>
+<button *ngIf="isAdmin" routerLink="/create-admin">Créer un administrateur</button>
 <button *ngIf="isAdmin" routerLink="/component-models">Voir les modèles de composants</button>
