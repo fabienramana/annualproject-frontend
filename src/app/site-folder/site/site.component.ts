@@ -21,7 +21,8 @@ export class SiteComponent implements OnInit {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
-    this.isAdmin = this.authService.getIfIsAdmin();
+    const decoded = this.authService.decodeToken();
+    this.isAdmin = decoded.user.isAdmin;
   }
 
 

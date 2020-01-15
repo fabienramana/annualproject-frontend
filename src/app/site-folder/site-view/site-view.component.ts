@@ -18,7 +18,8 @@ export class SiteViewComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
-    this.isAdmin = this.authService.getIfIsAdmin();
+    const decoded = this.authService.decodeToken();
+    this.isAdmin = decoded.user.isAdmin;
     if (this.isAdmin) {
         this.http.get<any>('https://annualproject-back.herokuapp.com/api/sites')
       .subscribe(res => {
@@ -26,7 +27,6 @@ export class SiteViewComponent implements OnInit {
         console.log(this.sites);
       });
     } else {
-      const decoded = this.authService.decodeToken();
       const companyId = decoded.user._id;
       console.log(companyId);
       this.http.get<any>('https://annualproject-back.herokuapp.com/api/company/' + companyId + '/sites')

@@ -17,6 +17,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
     const decoded = this.authService.decodeToken();
     this.mail = decoded.user.email;
-    this.isAdmin = this.authService.getIfIsAdmin();
+    this.isAdmin = decoded.user.isAdmin;
   }
 }
