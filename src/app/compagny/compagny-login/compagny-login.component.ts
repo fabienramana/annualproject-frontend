@@ -32,7 +32,6 @@ export class CompagnyLoginComponent {
                     console.log('Afficher un message d\'erreur');
                   }
                   if (res2.token !== undefined) {
-                    localStorage.setItem('isAdmin', res2.isAdmin);
                     localStorage.setItem ('token', res2.token);
                     console.log(localStorage.getItem('token'));
                     this.router.navigateByUrl('/homepage');
@@ -41,7 +40,6 @@ export class CompagnyLoginComponent {
               );
             }
             if (res.token !== undefined) {
-              localStorage.setItem('isAdmin', res.isAdmin);
               localStorage.setItem ('token', res.token);
               console.log(localStorage.getItem('token'));
               this.router.navigateByUrl('/homepage');
