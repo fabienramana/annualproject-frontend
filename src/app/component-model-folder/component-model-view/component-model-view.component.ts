@@ -17,7 +17,7 @@ export class ComponentModelViewComponent implements OnInit {
     this.http.get<any>('https://annualproject-back.herokuapp.com/api/component-models')
     .subscribe(res => {
       this.componentModels = res;
-      console.log(this.componentModels);
+      console.log(res);
     });
   }
 

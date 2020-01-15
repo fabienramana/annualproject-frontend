@@ -29,7 +29,6 @@ export class CreateArticleComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
     const siteId = this.route.snapshot.params['siteId'];
     const name = form.value['name'];
     const price = form.value['price'];

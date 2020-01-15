@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import * as jwt_decode from 'jwt-decode';
 import { AuthService } from '../../services/auth.service';
 
 
@@ -20,7 +19,6 @@ export class CreateSiteComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
     const name = form.value['name'];
     const activity = form.value['activity'];
     const description = form.value['description'];

@@ -28,7 +28,6 @@ export class ModifyArticleComponent implements OnInit {
     const siteId = this.route.snapshot.params[siteIdKey];
     const articleIdKey = 'articleId';
     const articleId = this.route.snapshot.params[articleIdKey];
-    console.log(form.value);
     this.http.put<any>('https://annualproject-back.herokuapp.com/api/article/' + articleId, form.value)
       .subscribe(res => {
         console.log(res);

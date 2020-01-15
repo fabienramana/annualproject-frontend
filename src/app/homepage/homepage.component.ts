@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as jwt_decode from 'jwt-decode';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -12,7 +12,7 @@ export class HomepageComponent implements OnInit {
   mail: string;
   isAdmin = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     const decoded = this.authService.decodeToken();
