@@ -17,7 +17,7 @@ export class CreateAdminComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form.value);
-    this.http.post<any>('http://localhost:3000/api/create_admin', form.value)
+    this.http.post<any>('https://annualproject-back.herokuapp.com/api/create_admin', form.value)
       .subscribe(res => {
         console.log(res);
         this.router.navigateByUrl('/homepage');
