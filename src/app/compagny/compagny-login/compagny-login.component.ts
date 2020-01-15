@@ -20,7 +20,7 @@ export class CompagnyLoginComponent {
     this.http.post<any>('https://annualproject-back.herokuapp.com/api/login_company', user)
         .subscribe(res => {
           console.log(res);
-            if (res.error === 'Error authenticating') {
+          if (res.error === 'Error authenticating') {
               this.http.post<any>('https://annualproject-back.herokuapp.com/api/login_admin', user)
                 .subscribe(res2 => {
                   console.log(res2);
@@ -34,7 +34,7 @@ export class CompagnyLoginComponent {
                 }
               );
             }
-            if (res.token !== undefined) {
+          if (res.token !== undefined) {
               localStorage.setItem ('token', res.token);
               this.router.navigateByUrl('/homepage');
             }

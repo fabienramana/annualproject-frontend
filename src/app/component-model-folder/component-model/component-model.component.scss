@@ -1,0 +1,49 @@
+* {box-sizing: border-box}
+td{
+  font-weight:bold;
+}
+/* Full-width input fields */
+  input[type=text], textarea[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, textarea[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: rgb(19, 53, 247);
+  color: white;
+  padding: 4px 10px;
+  margin: 2px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
