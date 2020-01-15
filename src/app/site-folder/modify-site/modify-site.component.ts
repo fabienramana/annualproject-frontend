@@ -17,19 +17,16 @@ export class ModifySiteComponent implements OnInit {
   ngOnInit() {
     const idKey = 'id';
     const id = this.route.snapshot.params[idKey];
-    console.log(id);
     this.http.get<any>('https://annualproject-back.herokuapp.com/api/site/' + id)
       .subscribe(res => {
         this.site = res;
-        console.log(this.site);
+        console.log(res);
       });
   }
 
   onSubmit(form: NgForm) {
     const idKey = 'id';
     const id = this.route.snapshot.params[idKey];
-    console.log(id);
-    console.log(form.value);
     this.http.put<any>('https://annualproject-back.herokuapp.com/api/site/' + id, form.value)
       .subscribe(res => {
         console.log(res);

@@ -23,13 +23,11 @@ export class ModifyComponentModelComponent implements OnInit {
     this.id = id;
     this.http.get<any>('https://annualproject-back.herokuapp.com/api/component-model/' + id)
     .subscribe(res => {
+      console.log(res);
       this.numberOfPhotos = res.numberOfPhotos;
       this.data = res.data;
       this.numberOfTextField = res.numberOfTextFields;
       this.typeOfComponent = res.typeOfComponent;
-      console.log(this.numberOfPhotos);
-      console.log(this.numberOfTextField);
-      console.log(this.data);
     });
   }
 

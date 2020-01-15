@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import * as jwt_decode from 'jwt-decode';
 import { AuthService } from '../../services/auth.service';
 
 
@@ -24,11 +23,10 @@ export class SiteViewComponent implements OnInit {
         this.http.get<any>('https://annualproject-back.herokuapp.com/api/sites')
       .subscribe(res => {
         this.sites = res;
-        console.log(this.sites);
+        console.log(res);
       });
     } else {
       const companyId = decoded.user._id;
-      console.log(companyId);
       this.http.get<any>('https://annualproject-back.herokuapp.com/api/company/' + companyId + '/sites')
         .subscribe(res => {
           console.log(res);

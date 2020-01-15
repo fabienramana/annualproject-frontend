@@ -15,13 +15,11 @@ import { CreateArticleComponent } from './article-folder/create-article/create-a
 import { ModifyArticleComponent } from './article-folder/modify-article/modify-article.component';
 import { DeleteArticleComponent } from './article-folder/delete-article/delete-article.component';
 import { ArticleViewComponent } from './article-folder/article-view/article-view.component';
-import { DisconnectComponent } from './disconnect/disconnect.component';
 
 
 const routes: Routes = [
   { path: '', component: CompagnyLoginComponent},
   { path: 'login', component: CompagnyLoginComponent},
-  { path: 'disconnect', component: DisconnectComponent },
   { path: 'create-company', component: CompagnyCreateComponent},
   { path: 'create-site', component: CreateSiteComponent },
   { path: 'sites', component: SiteViewComponent },

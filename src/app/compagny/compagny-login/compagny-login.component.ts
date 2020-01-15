@@ -11,19 +11,15 @@ export class CompagnyLoginComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(email, pwd) {
-    alert(email.value + ' ' + pwd.value);
     const mail = email.value;
     const password = pwd.value;
     const user = {
       mail,
       password
     };
-    console.log(user);
     this.http.post<any>('https://annualproject-back.herokuapp.com/api/login_company', user)
         .subscribe(res => {
-          // Mettre sécurité si erreur
-            console.log(res);
-            console.log(res.error);
+          console.log(res);
             if (res.error === 'Error authenticating') {
               this.http.post<any>('https://annualproject-back.herokuapp.com/api/login_admin', user)
                 .subscribe(res2 => {
@@ -33,7 +29,6 @@ export class CompagnyLoginComponent {
                   }
                   if (res2.token !== undefined) {
                     localStorage.setItem ('token', res2.token);
-                    console.log(localStorage.getItem('token'));
                     this.router.navigateByUrl('/homepage');
                   }
                 }
@@ -41,10 +36,9 @@ export class CompagnyLoginComponent {
             }
             if (res.token !== undefined) {
               localStorage.setItem ('token', res.token);
-              console.log(localStorage.getItem('token'));
               this.router.navigateByUrl('/homepage');
             }
-          }
-        );
+        }
+      );
   }
 }

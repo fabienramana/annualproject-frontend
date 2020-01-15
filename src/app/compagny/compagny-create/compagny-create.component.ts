@@ -16,7 +16,6 @@ export class CompagnyCreateComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   createCompagny(email, pwd, address, country, siren, activity) {
-    alert(email.value + ' ' + pwd.value + ' ' + address.value + ' ' + country.value + ' ' + siren.value + ' ' + activity.value);
     const mail = email.value;
     const password = pwd.value;
     const addressValue = address.value;
@@ -31,14 +30,11 @@ export class CompagnyCreateComponent {
       sirenValue,
       activityValue
     };
-    console.log(compagny);
     this.http.post<any>('https://annualproject-back.herokuapp.com/api/create_company', compagny)
         .subscribe(res => {
           // Mettre sécurité si erreur
             console.log(res);
-            console.log(res.token);
             localStorage.setItem ('token', res.token);
-            console.log(localStorage.getItem('token'));
             this.router.navigateByUrl('/homepage');
           }
         );
